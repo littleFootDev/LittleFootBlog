@@ -1,2 +1,2 @@
-import "./style.scss";
-console.log("main");
+import "./assets/styles/styles.scss";
+import "./index.scss";
