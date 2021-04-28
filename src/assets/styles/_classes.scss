@@ -24,4 +24,14 @@
     border: 1px solid var(--primary);
     color: var(--primary);
   }
+  &-danger {
+    background: white;
+    border: 1px solid var(--error);
+    color: var(--error);
+  }
+}
+.text {
+  &-error {
+    color: var(--error);
+  }
 }
