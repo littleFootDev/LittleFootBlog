@@ -1,9 +1,15 @@
+@import "../assets/styles/media-queries";
+
 .content {
   display: flex;
   justify-content: center;
   align-items: center;
   form {
     width: 700px;
+    @include xs {
+      max-width: 400px;
+      width: 100%;
+    }
     padding: 4rem;
     box-shadow: var(--box-shadow);
     border-radius: 3px;
@@ -25,6 +31,7 @@
         border: 1px solid var(--divider);
         padding: 1rem;
         outline: 0;
+        border-radius: 3px;
         &:focus {
           border-color: var(--accent);
         }
@@ -38,7 +45,7 @@
       justify-content: flex-end;
       align-items: center;
       .btn {
-        margin-left: 1rem;
+        margin-left: 0.5rem;
       }
     }
   }
