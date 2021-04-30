@@ -1,5 +1,6 @@
 import "./assets/styles/styles.scss";
 import "./index.scss";
+import { openModal } from "./assets/javascript/modal";
 
 const articleContainerElement = document.querySelector(".articles-container");
 const categoriesContainerElement =  document.querySelector('.categories');
@@ -63,17 +64,18 @@ const createArticles = () => {
 
   deleteButtons.forEach(button => {
       button.addEventListener('click', async event => {
-          try {
-            const target = event.target;
-            const articleId = target.dataset.id;
-            const response = await fetch(`https://restapi.fr/api/littlefoots/${articleId}`, {
-                method : "DELETE"
-            }) 
-            const body = await response.json();
-            fetchArticle();
-          } catch (e) {
-              console.log("e : ", e);
-          }
+        openModal("Êtes vous sur de vouloir suprimer votre article ?");
+          // try {
+          //   const target = event.target;
+          //   const articleId = target.dataset.id;
+          //   const response = await fetch(`https://restapi.fr/api/littlefoots/${articleId}`, {
+          //       method : "DELETE"
+          //   }) 
+          //   const body = await response.json();
+          //   fetchArticle();
+          // } catch (e) {
+          //     console.log("e : ", e);
+          // }
       })
   })
 };
